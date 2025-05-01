@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Shop - Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <div class="logo">ShopLogo</div>
+    <nav class="navbar" aria-label="Admin Navigation">
+      <ul>
+        <li><a href="#products-section">Products</a></li>
+        <li><a href="#users-section">Users</a></li>
+        <li><a href="#orders-section">Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+    <!-- Manage Products -->
+    <section id="products-section">
+      <h2>Manage Products</h2>
+      <button class="btn">Add New Product</button>
+      <table class="admin-table">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Price</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>Product 1</td><td>$29.99</td>
+            <td><button>Edit</button> <button>Delete</button></td>
+          </tr>
+          <!-- More products -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Manage Users -->
+    <section id="users-section">
+      <h2>Manage Users</h2>
+      <table class="admin-table">
+        <thead>
+          <tr><th>User ID</th><th>Name</th><th>Email</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>101</td><td>John Doe</td><td>john@example.com</td>
+            <td><button>View</button> <button>Delete</button></td>
+          </tr>
+          <!-- More users -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Manage Orders -->
+    <section id="orders-section">
+      <h2>Manage Orders</h2>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Order #</th><th>User</th><th>Status</th><th>Total</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#12345</td><td>John Doe</td><td>Processing</td><td>$59.99</td>
+          </tr>
+          <!-- More orders -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 My Shop</p>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>

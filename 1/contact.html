@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Shop - Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <div class="logo">ShopLogo</div>
+    <nav class="navbar" aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <h1>Contact Us</h1>
+    <form id="contact-form">
+      <label for="contact-name">Name:</label>
+      <input type="text" id="contact-name" required>
+
+      <label for="contact-email">Email:</label>
+      <input type="email" id="contact-email" required>
+
+      <label for="contact-message">Message:</label>
+      <textarea id="contact-message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <section class="contact-info">
+      <h2>Our Information</h2>
+      <p>123 Main Street<br>City, Country</p>
+      <p>Email: support@myshop.com<br>Phone: (123) 456-7890</p>
+      <!-- Optional: embed map -->
+      <div class="map">
+        <!-- Google Maps iframe or static image placeholder -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 My Shop</p>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>
