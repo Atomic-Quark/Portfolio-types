@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Shop - Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+</head>
+
+<body>
+    <noscript>This site requires JavaScript to function properly. Please enable JavaScript in your browser settings.</noscript>
+    <div class="loader" id="loader"></div>
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+      <nav aria-label="Mobile Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html" class="active">Cart</a></li>
+        </ul>
+      </nav>
+        <button class="close-nav" aria-label="Close navigation" id="close-nav">X</button>
+    </div>
+
+
+  <a href="#cart-main" class="skip-link">Skip to main content</a>
+  <header>
+    <div class="logo">ShopLogo</div>
+    <nav class="navbar" aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html" class="active">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+     
+       
+      </ul>
+    </nav>
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+    <div class="user-actions">
+      <a href="login.html">Login</a>
+      <a href="account.html">Account</a>
+        <a href="cart.html">Cart (0)</a>
+    
+        <button class="cart-toggle" aria-label="Toggle cart" id="cart-toggle">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+        <div class="cart-dropdown" id="cart-dropdown">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" aria-label="Close cart" id="close-cart">X</button>
+            </div>
+            <ul class="cart-items
+
+
+">
+                <li class="cart-item">
+                    <img src="img/product1.jpg" alt="Product 1" width="50" loading="lazy">
+                    <span>Product 1</span>
+                    <span>$29.99</span>
+                    <button class="remove-btn" onclick="removeFromCart(1)">X</button>
+                </li>
+                <!-- More items... -->
+            </ul>
+            <div class="cart-summary">
+                <p>Subtotal: <span class="summary-value">$29.99</span></p>
+                <p>Tax: <span class="summary-value">$2.70</span></p>
+                <p><strong>Total: <span class="summary-value">$32.69</span></strong></p>
+                <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+                <a class="continue-btn" href="products.html">Continue Shopping</a>
+
+
+
+    </div>
+  </header>
+
+  <main id="cart-main">
+    <h1 class="cart-title">Your Shopping Cart</h1>
+    <p class="cart-intro">Review your selected items before proceeding to checkout.</p>
+    <div class="cart-alert" id="cart-alert" style="display: none;">Item removed from cart.</div>
+    <div class="cart-empty" id="cart-empty" style="display: none;">Your cart is empty.</div>
+    <div class="cart-loading" id="cart-loading" style="display: none;">Loading...</div>
+    <div class="cart-error" id="cart-error" style="display: none;">An error occurred. Please try again.</div>
+    <div class="cart-success" id="cart-success" style="display: none;">Item added to cart.</div>
+    <div class="cart-info" id="cart-info" style="display: none;">You have 3 items in your cart.</div>
+    <div class="cart-notification" id="cart-notification" style="display: none;">Item added to cart.</div>  
+    <table class="cart-table">
+        <caption class="visually-hidden">Your selected items</caption>
+        <table class="cart-table" aria-label="Your selected items">
+        <caption>Your selected items</caption>
+      <thead>
+    
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+    <tbody>
+        <tr class="cart-item">
+          <td class="product-cell">
+            <img src="img/product1.jpg" alt="Product 1" width="50" loading="lazy">
+            <span>Product 1</span>
+          </td>
+          <td>$29.99</td>
+          <td><input type="number" value="1" min="1" onchange="updateQuantity(1, this.value)"></td>
+          <td>$29.99</td>
+          <td><button class="remove-btn" onclick="removeFromCart(1)">X</button></td>
+        </tr>
+        <!-- More items... -->
+      </tbody>
+    </table>
+    <div class="cart-summary">
+      <p>Subtotal: <span class="summary-value">$29.99</span></p>
+      <p>Tax: <span class="summary-value">$2.70</span></p>
+      <p><strong>Total: <span class="summary-value">$32.69</span></strong></p>
+      <div class="cart-buttons">
+        <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+        <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+        <button class="update-cart-btn" onclick="updateCart()">Update Cart</button>
+      </div>   
+        <a class="continue-btn" href="products.html">Continue Shopping</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 My Shop</p>
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="shipping.html">Shipping &amp; Returns</a></li>
+
+            <li><a href="sitemap.html">Sitemap</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
