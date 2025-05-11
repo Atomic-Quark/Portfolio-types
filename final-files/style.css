@@ -1,0 +1,240 @@
+<style>
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #1788ae;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #23b9eb;
+  }
+
+  /* Style for the glowing "D" */
+  .letter-d {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    opacity: 0.2;
+    z-index: 1;
+  }
+
+  .letter-d path {
+    stroke: #1595B6;
+    stroke-width: 10;
+    fill: none;
+    filter: drop-shadow(0 0 10px #1595B6);
+    animation: glow 3s infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      stroke: #1595B6;
+      filter: drop-shadow(0 0 10px #1595B6);
+    }
+    to {
+      stroke: #1F2667;
+      filter: drop-shadow(0 0 15px #1F2667);
+    }
+  }
+
+  /* Updated Let's Connect styling */
+  .contact-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background-color: #1a1a1a;
+    border: 2px solid #1595B6;
+    color: #fff;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #1F2667;
+  }
+
+  .contact-form button {
+    background: linear-gradient(to right, #1595B6, #1F2667);
+    transition: transform 0.1s ease, background 0.3s ease;
+  }
+
+  .contact-form button:hover {
+    transform: scale(1.05);
+  }
+
+  /* Day/Night Mode Styles */
+  body {
+    background-color: #111;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body.light-theme {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+  }
+
+  body.light-theme .contact-form input,
+  body.light-theme .contact-form textarea {
+    background-color: #fff;
+    border: 2px solid #1F2667;
+    color: #1a1a1a;
+  }
+
+  body.light-theme .contact-form input:focus,
+  body.light-theme .contact-form textarea:focus {
+    border-color: #1595B6;
+  }
+
+  body.light-theme .contact-form button {
+    background: linear-gradient(to right, #1F2667, #1595B6);
+  }
+
+  body.light-theme .letter-d path {
+    stroke: #1F2667;
+    filter: drop-shadow(0 0 10px #1F2667);
+  }
+
+  @keyframes glow-light {
+    from {
+      stroke: #1F2667;
+      filter: drop-shadow(0 0 10px #1F2667);
+    }
+    to {
+      stroke: #1595B6;
+      filter: drop-shadow(0 0 15px #1595B6);
+    }
+  }
+
+  body.light-theme .letter-d path {
+    animation: glow-light 3s infinite alternate;
+  }
+
+  /* Text and icon colors for light mode */
+  body.light-theme .text-gray-300 {
+    color: #4a4a4a;
+  }
+
+  body.light-theme .text-[#b0b2c3] {
+    color: #4a4a4a;
+  }
+
+  body.light-theme .hover\:text-white:hover {
+    color: #1595B6;
+  }
+
+  /* SVG and border adjustments */
+  body.light-theme .border-[#999] {
+    border-color: #4a4a4a;
+  }
+
+  body.light-theme .bg-[#111] {
+    background-color: #f5f5f5;
+  }
+
+  body.light-theme .text-[#1788ae] {
+    color: #1F2667;
+  }
+
+  body.light-theme .border-[#1788ae] {
+    border-color: #1F2667;
+  }
+
+  /* About Popup Styles */
+  .about-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-content {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+
+  body.light-theme .about-content {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(31, 38, 103, 0.3);
+  }
+
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  body.light-theme .close-popup {
+    color: #1a1a1a;
+  }
+
+  .resume-button {
+    background: linear-gradient(to right, #1595B6, #1F2667);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: transform 0.1s ease;
+  }
+
+  body.light-theme .resume-button {
+    background: linear-gradient(to right, #1F2667, #1595B6);
+  }
+
+  .resume-button:hover {
+    transform: scale(1.05);
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1rem 0;
+  }
+
+  .skill-item {
+    background: #2a2a2a;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  body.light-theme .skill-item {
+    background: #e0e0e0;
+    color: #1a1a1a;
+  }
+</style>
