@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .shadow-glow {
+    box-shadow: 0 0 2.5rem var(--main-color), 0 0 5rem var(--main-color);
+  }
+  .btn {
+    @apply inline-block px-8 py-3 text-lg font-semibold text-center rounded-full bg-gradient-to-r from-[var(--main-color)] to-[var(--accent-color)] text-[var(--bg-color)] transition-transform hover:scale-105;
+  }
+  .services-container,
+  .portfolio-container {
+    @apply grid gap-8;
+  }
+  .input-box {
+    @apply flex flex-wrap gap-4;
+  }
+  .social-media a:hover {
+    @apply scale-110;
+  }
+}

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmic Portfolio | Divyanshu Kumar</title>
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/output.css" />
+
+    <!-- Internal Styles -->
+  </head>
+
+  <body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <i class='bx bx-sun' id="theme-toggle-sun"></i>
+      <i class='bx bx-moon' id="theme-toggle-moon"></i>
+    </div>
+
+    <!-- Glowing D -->
+    <svg class="glowing-d" viewBox="0 0 400 400">
+      <path
+        d="M100 100 V300 H200 C250 300 300 250 300 200 C300 150 250 100 200 100 H100 Z"
+        stroke="#1595B6"
+        stroke-opacity="0.9"
+        stroke-width="10"
+        fill="none"
+      />
+    </svg>
+
+    <!-- Matter.js Physics Background -->
+    <canvas id="physics-bg"></canvas>
+
+    <!-- Header Design -->
+    <header class="header">
+      <a href="#" class="logo">DK</a>
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Home Section Design -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Greetings, I'm</h3>
+        <h1>Divyanshu Kumar</h1>
+        <h3>A <span class="multiple-text"></span></h3>
+        <p>Crafting digital experiences that blend creativity and technology. Let's launch your ideas into the cosmos!</p>
+        <div class="social-media">
+          <a href="https://github.com"><i class='bx bxl-github'></i></a>
+          <a href="https://linkedin.com"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://twitter.com"><i class='bx bxl-twitter'></i></a>
+          <a href="https://instagram.com"><i class='bx bxl-instagram'></i></a>
+        </div>
+        <a href="assets/resume.pdf" class="btn shadow-glow" target="_blank">Download CV</a>
+      </div>
+      <div class="home-img">
+        <img src="assets/images/profile.png" alt="Profile Image">
+      </div>
+    </section>
+
+    <!-- About Section Design -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="assets/images/about.png" alt="About Image">
+      </div>
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Full-Stack Developer & Dreamer</h3>
+        <p>I'm a tech enthusiast with a passion for building immersive web experiences. With expertise in JavaScript, React, Node.js, and creative design, I turn visions into reality. When I'm not coding, I'm exploring the stars or sketching new ideas.</p>
+        
+        <!-- Skills Subsection -->
+        <div class="skills">
+          <h4>Skills</h4>
+          <div class="skill-item">
+            <span>JavaScript</span>
+            <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>React</span>
+            <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Node.js</span>
+            <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>UI/UX Design</span>
+            <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
+          </div>
+        </div>
+
+        <!-- Education Subsection -->
+        <div class="education">
+          <h4>Education</h4>
+          <ul class="timeline">
+            <li>
+              <span>2020 - 2024</span>
+              <p>B.Tech in Computer Science, XYZ University</p>
+            </li>
+            <li>
+              <span>2018 - 2020</span>
+              <p>High School, ABC School</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-buttons">
+          <a href="#" class="btn shadow-glow">Explore More</a>
+          <a href="assets/resume.pdf" class="btn shadow-glow" target="_blank">View Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section Design -->
+    <section class="services" id="services">
+      <h2 class="heading">My <span>Services</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class='bx bx-code-alt'></i>
+          <h3>Web Development</h3>
+          <p>Building responsive, high-performance websites with cutting-edge tech.</p>
+          <button><a href="#" class="btn shadow-glow">Learn More</a></button>
+        </div>
+        <div class="services-box">
+          <i class='bx bx-palette'></i>
+          <h3>Creative Design</h3>
+          <p>Designing stunning visuals and intuitive UI/UX for seamless experiences.</p>
+          <button><a href="#" class="btn shadow-glow">Learn More</a></button>
+        </div>
+        <div class="services-box">
+          <i class='bx bx-rocket'></i>
+          <h3>App Development</h3>
+          <p>Creating cross-platform mobile apps that engage and delight users.</p>
+          <button><a href="#" class="btn shadow-glow">Learn More</a></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section Design -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">My <span>Work</span></h2>
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="assets/images/proj-1.png" alt="Project 1">
+          <div class="portfolio-layer">
+            <h4>Proj-1</h4>
+            <p>An e-commerce platform with React and Stripe integration.</p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="assets/images/proj-2.png" alt="Project 2">
+          <div class="portfolio-layer">
+            <h4>Proj-2</h4>
+            <p>A dynamic portfolio with 3D animations and GSAP.</p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="assets/images/proj-3.png" alt="Project 3">
+          <div class="portfolio-layer">
+            <h4>Proj-3</h4>
+            <p>A mobile app for stargazing, built with Flutter.</p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section Design -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Get In <span>Touch</span></h2>
+      <form id="contact-form">
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="input-box">
+          <input type="tel" name="phone" placeholder="Mobile Number">
+          <input type="text" name="subject" placeholder="Subject">
+        </div>
+        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message" class="btn shadow-glow">
+        <p id="form-message"></p>
+      </form>
+    </section>
+
+    <!-- Footer Design -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright © 2025 by Divyanshu Kumar | All Rights Reserved.</p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+      </div>
+    </footer>
+
+    <!-- Dependencies -->
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Matter.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      // Theme Toggle
+      const toggleSun = document.getElementById('theme-toggle-sun');
+      const toggleMoon = document.getElementById('theme-toggle-moon');
+      toggleSun.addEventListener('click', () => {
+        document.body.classList.add('light-theme');
+        toggleSun.style.display = 'none';
+        toggleMoon.style.display = 'block';
+      });
+      toggleMoon.addEventListener('click', () => {
+        document.body.classList.remove('light-theme');
+        toggleSun.style.display = 'block';
+        toggleMoon.style.display = 'none';
+      });
+
+      // Typed.js for Multiple Text
+      const typed = new Typed('.multiple-text', {
+        strings: ['Full-Stack Developer', 'UI/UX Designer', 'Tech Enthusiast'],
+        typeSpeed: 100,
+        backSpeed: 50,
+        loop: true
+      });
+
+      // ScrollReveal Animations
+      ScrollReveal().reveal('.home-content, .about-content, .services-box, .portfolio-box, .contact form', {
+        delay: 200,
+        distance: '50px',
+        duration: 1000,
+        origin: 'bottom',
+        reset: true
+      });
+
+      // GSAP Animations
+      gsap.from('.logo', { opacity: 0, y: -50, duration: 1 });
+      gsap.from('.navbar a', { opacity: 0, y: -50, stagger: 0.2, duration: 1, delay: 0.5 });
+      gsap.from('.home-img img', { opacity: 0, scale: 0.5, duration: 1.5, delay: 1 });
+
+      // Matter.js Physics Background
+      const canvas = document.getElementById('physics-bg');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const Engine = Matter.Engine,
+            Render = Matter.Render,
+            World = Matter.World,
+            Bodies = Matter.Bodies;
+
+      const engine = Engine.create();
+      const render = Render.create({
+        canvas: canvas,
+        engine: engine,
+        options: {
+          width: canvas.width,
+          height: canvas.height,
+          wireframes: false,
+          background: 'transparent'
+        }
+      });
+
+      const particles = [];
+      for (let i = 0; i < 50; i++) {
+        const particle = Bodies.circle(
+          Math.random() * canvas.width,
+          Math.random() * canvas.height,
+          5,
+          {
+            render: {
+              fillStyle: '#1595B6',
+              opacity: 0.5
+            }
+          }
+        );
+        particles.push(particle);
+      }
+
+      World.add(engine.world, particles);
+      Engine.run(engine);
+      Render.run(render);
+
+      // EmailJS Initialization
+      (function () {
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+      })();
+
+      // Contact Form Submission
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const form = event.target;
+        const formMessage = document.getElementById('form-message');
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name || !email || !message) {
+          formMessage.textContent = 'Please fill out all required fields.';
+          formMessage.style.color = '#ff4d4d';
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          formMessage.textContent = 'Please enter a valid email address.';
+          formMessage.style.color = '#ff4d4d';
+          return;
+        }
+
+        formMessage.textContent = 'Sending...';
+        formMessage.style.color = '#1595B6';
+
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+          .then(() => {
+            formMessage.textContent = 'Message sent successfully!';
+            formMessage.style.color = '#1595B6';
+            form.reset();
+          })
+          .catch((error) => {
+            formMessage.textContent = 'Failed to send message: ' + error.text;
+            formMessage.style.color = '#ff4d4d';
+            console.error('EmailJS error:', error);
+          });
+      });
+
+      // Responsive Navbar
+      const menuIcon = document.getElementById('menu-icon');
+      const navbar = document.querySelector('.navbar');
+      menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        menuIcon.classList.toggle('bx-x');
+      });
+
+      // Update active link on scroll
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.navbar a');
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
