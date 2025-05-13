@@ -1,0 +1,375 @@
+/* Root Variables for Consistent Theming */
+:root {
+  --primary-blue: #1595B6;
+  --secondary-blue: #1F2667;
+  --dark-bg: #111;
+  --dark-secondary-bg: #1a1a1a;
+  --light-bg: #f5f5f5;
+  --text-dark: #fff;
+  --text-light: #333;
+  --text-muted-dark: #b0b2c3;
+  --text-muted-light: #666;
+  --accent-blue: #1788ae;
+  --shadow-blue: rgba(59, 130, 246, 0.6);
+  --shadow-blue-light: rgba(59, 130, 246, 0.2);
+  --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-dark);
+  font-family: 'Nunito', sans-serif;
+  transition: var(--transition);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body.light-theme {
+  background-color: var(--light-bg);
+  color: var(--text-light);
+}
+
+/* Adjust background for specific sections in light mode */
+body.light-theme .bg-\[\#111\] {
+  background-color: var(--light-bg);
+}
+
+/* Adjust text colors in light mode */
+body.light-theme .text-white {
+  color: var(--text-light);
+}
+
+body.light-theme .text-\[\#b0b2c3\] {
+  color: var(--text-muted-light);
+}
+
+body.light-theme .text-gray-300 {
+  color: var(--text-muted-light);
+}
+
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent-blue);
+  transition: var(--transition);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--primary-blue);
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--primary-blue);
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-blue);
+  opacity: 1;
+}
+
+/* Glowing "D" Logo */
+.letter-d {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 40vw, 500px);
+  height: clamp(300px, 40vw, 500px);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.letter-d path {
+  stroke: var(--primary-blue);
+  stroke-width: 10;
+  fill: none;
+  filter: drop-shadow(0 0 10px var(--primary-blue));
+  animation: glow 3s infinite alternate;
+}
+
+body.light-theme .letter-d path {
+  stroke: var(--secondary-blue);
+  filter: drop-shadow(0 0 10px var(--secondary-blue));
+  animation: glow-light 3s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    stroke: var(--primary-blue);
+    filter: drop-shadow(0 0 10px var(--primary-blue));
+  }
+  to {
+    stroke: var(--secondary-blue);
+    filter: drop-shadow(0 0 15px var(--secondary-blue));
+  }
+}
+
+@keyframes glow-light {
+  from {
+    stroke: var(--secondary-blue);
+    filter: drop-shadow(0 0 10px var(--secondary-blue));
+  }
+  to {
+    stroke: var(--primary-blue);
+    filter: drop-shadow(0 0 15px var(--primary-blue));
+  }
+}
+
+/* Contact Form Styles */
+.contact-image {
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: var(--dark-secondary-bg);
+  border: 2px solid var(--primary-blue);
+  color: var(--text-dark);
+  border-radius: 8px;
+  padding: 0.75rem;
+  width: 100%;
+  transition: var(--transition);
+  outline: none;
+}
+
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea {
+  background-color: var(--light-bg);
+  color: var(--text-light);
+  border-color: var(--secondary-blue);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 8px var(--shadow-blue);
+}
+
+body.light-theme .contact-form input:focus,
+body.light-theme .contact-form textarea:focus {
+  box-shadow: 0 0 8px var(--shadow-blue-light);
+}
+
+.contact-form button {
+  background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+  color: var(--text-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+body.light-theme .contact-form button {
+  background: linear-gradient(to right, var(--secondary-blue), var(--primary-blue));
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--shadow-blue);
+}
+
+body.light-theme .contact-form button:hover {
+  box-shadow: 0 4px 15px var(--shadow-blue-light);
+}
+
+/* Button Styles */
+.bg-gradient-to-l.from-\[\#1595b6\].to-\[\#1f2667e6\] {
+  background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+body.light-theme .bg-gradient-to-l.from-\[\#1595b6\].to-\[\#1f2667e6\] {
+  background: linear-gradient(to right, var(--secondary-blue), var(--primary-blue));
+}
+
+/* Project Section Styles */
+.bg-\[\#1788ae\] {
+  background-color: var(--accent-blue);
+}
+
+body.light-theme .bg-\[\#1788ae\] {
+  background-color: var(--primary-blue);
+}
+
+.border-\[\#1788ae\] {
+  border-color: var(--accent-blue);
+}
+
+body.light-theme .border-\[\#1788ae\] {
+  border-color: var(--primary-blue);
+}
+
+.border-\[\#999\] {
+  border-color: #999;
+}
+
+body.light-theme .border-\[\#999\] {
+  border-color: var(--text-muted-light);
+}
+
+/* Testimonial Cards */
+.shadow-\[0_0px_50px_rgba\(59\,130\,246\,0\.6\)\] {
+  box-shadow: 0 0 50px var(--shadow-blue);
+  transition: var(--transition);
+}
+
+body.light-theme .shadow-\[0_0px_50px_rgba\(59\,130\,246\,0\.6\)\] {
+  box-shadow: 0 0 20px var(--shadow-blue-light);
+}
+
+.drop-shadow-\[0_0px_80px_rgba\(59\,130\,246\,1\)\] {
+  filter: drop-shadow(0 0 80px var(--shadow-blue));
+}
+
+body.light-theme .drop-shadow-\[0_0px_80px_rgba\(59\,130\,246\,1\)\] {
+  filter: drop-shadow(0 0 20px var(--shadow-blue-light));
+}
+
+/* About Popup Styles (from previous response, refined) */
+.about-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.about-content {
+  background: var(--dark-secondary-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 20px var(--shadow-blue);
+  transition: var(--transition);
+}
+
+body.light-theme .about-content {
+  background: var(--light-bg);
+  box-shadow: 0 0 20px var(--shadow-blue-light);
+}
+
+.close-popup {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: var--transition);
+}
+
+body.light-theme .close-popup {
+  color: var(--text-light);
+}
+
+.close-popup:hover {
+  color: var(--primary-blue);
+}
+
+.resume-button {
+  background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  color: var(--text-dark);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+body.light-theme .resume-button {
+  background: linear-gradient(to right, var(--secondary-blue), var(--primary-blue));
+}
+
+.resume-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--shadow-blue);
+}
+
+body.light-theme .resume-button:hover {
+  box-shadow: 0 4px 15px var(--shadow-blue-light);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.skill-item {
+  background: #2a2a2a;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+body.light-theme .skill-item {
+  background: #e0e0e0;
+  color: var(--text-light);
+}
+
+.skill-item:hover {
+  background: var(--primary-blue);
+  color: var(--text-dark);
+}
+
+body.light-theme .skill-item:hover {
+  background: var(--secondary-blue);
+  color: var(--text-dark);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .letter-d {
+    width: 300px;
+    height: 300px;
+  }
+
+  .swiper-slide {
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.5rem;
+  }
+
+  .about-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+}
